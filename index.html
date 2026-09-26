@@ -3,7 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>DimmerPro — Privacy Policy</title>
+<title>DimmerPro — Screen Dimmer for Mac</title>
+<meta name="description" content="DimmerPro dims your Mac's screen below hardware limits — multi-display sync, scheduler, presets and a global hotkey, built natively with SwiftUI.">
+<link rel="icon" type="image/png" href="favicon.png">
 <style>
   :root {
     --accent: #3B82F6;
@@ -12,6 +14,8 @@
     --border: rgba(255,255,255,0.08);
     --text: #FFFFFF;
     --text-secondary: #9CA3AF;
+    --gold-light: #FDE68A;
+    --gold-mid: #F5B740;
   }
   * { box-sizing: border-box; }
   body {
@@ -23,10 +27,38 @@
     line-height: 1.6;
   }
   .wrap {
-    max-width: 720px;
+    max-width: 960px;
     margin: 0 auto;
-    padding: 64px 24px 96px;
+    padding: 0 24px 96px;
   }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  nav.top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 24px 0 0;
+    max-width: 960px;
+    margin: 0 auto;
+  }
+  nav.top .brand {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 700;
+    font-size: 16px;
+    color: var(--text);
+  }
+  nav.top .brand img { width: 22px; height: 22px; border-radius: 6px; }
+  nav.top .links a {
+    color: var(--text-secondary);
+    font-size: 14px;
+    margin-left: 20px;
+    text-decoration: none;
+  }
+  nav.top .links a:hover { color: var(--text); }
+
   .badge {
     display: inline-flex;
     align-items: center;
@@ -40,143 +72,317 @@
     font-weight: 600;
     letter-spacing: 0.01em;
   }
-  h1 {
-    font-size: 34px;
-    font-weight: 700;
-    margin: 20px 0 8px;
-    letter-spacing: -0.02em;
+
+  .hero {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 48px;
+    align-items: center;
+    padding: 56px 0 40px;
   }
-  .updated {
-    color: var(--text-secondary);
-    font-size: 14px;
-    margin-bottom: 40px;
+  @media (max-width: 760px) {
+    .hero { grid-template-columns: 1fr; padding-top: 32px; }
+  }
+  .hero h1 {
+    font-size: 40px;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    margin: 20px 0 12px;
+  }
+  .hero .lede {
+    color: #E5E7EB;
+    font-size: 17px;
+    margin: 0 0 28px;
+    max-width: 480px;
+  }
+  .cta-row { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
+  .cta-primary {
+    display: inline-block;
+    background: var(--accent);
+    color: #fff;
+    font-weight: 600;
+    font-size: 15px;
+    padding: 13px 24px;
+    border-radius: 10px;
+  }
+  .cta-primary:hover { text-decoration: none; opacity: 0.9; }
+  .cta-note { color: var(--text-secondary); font-size: 13px; }
+
+  /* App UI illustration — recreated from the app's own design system (Theme.swift),
+     not a photographic screenshot: exact colors/spacing/copy, drawn in CSS. */
+  .mock-panel {
+    width: 300px;
+    margin: 0 auto;
+    background: #121316;
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 16px;
+    box-shadow: 0 30px 80px rgba(0,0,0,0.55);
+  }
+  .mock-header { display: flex; align-items: center; gap: 8px; margin-bottom: 14px; }
+  .mock-header img { width: 20px; height: 20px; border-radius: 5px; }
+  .mock-header .title { font-weight: 700; font-size: 14px; color: #fff; font-family: -apple-system, sans-serif; }
+  .mock-header .spacer { flex: 1; }
+  .mock-pro-badge {
+    display: flex; align-items: center; gap: 6px;
+    background: rgba(255,255,255,0.07);
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    padding: 5px 10px;
+    font-size: 10px; font-weight: 700; color: #fff;
+  }
+  .mock-pro-badge .gold {
+    width: 14px; height: 14px; border-radius: 4px;
+    background: linear-gradient(180deg, var(--gold-light), var(--gold-mid));
+  }
+  .mock-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 12px 14px;
+    margin-bottom: 10px;
+  }
+  .mock-toggle-row { display: flex; align-items: center; gap: 8px; }
+  .mock-toggle-row .label { font-size: 13px; font-weight: 600; color: #fff; flex: 1; }
+  .mock-switch { width: 32px; height: 18px; border-radius: 999px; background: var(--accent); position: relative; }
+  .mock-switch::after { content: ''; position: absolute; top: 2px; right: 2px; width: 14px; height: 14px; border-radius: 50%; background: #fff; }
+  .mock-slider-label { font-size: 11px; color: var(--text-secondary); margin-bottom: 8px; display: flex; justify-content: space-between; }
+  .mock-track { height: 6px; border-radius: 999px; background: rgba(255,255,255,0.08); position: relative; }
+  .mock-fill { position: absolute; left: 0; top: 0; bottom: 0; width: 68%; border-radius: 999px; background: linear-gradient(to right, #FF9500, #FFCC00); }
+  .mock-thumb { position: absolute; top: 50%; left: 68%; width: 14px; height: 14px; background: #fff; border-radius: 50%; transform: translate(-50%, -50%); box-shadow: 0 1px 3px rgba(0,0,0,0.4); }
+  .mock-presets { display: flex; gap: 8px; }
+  .mock-preset {
+    flex: 1;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 8px 4px;
+    text-align: center;
+  }
+  .mock-preset.active { border-color: var(--accent); }
+  .mock-preset .emoji { font-size: 17px; }
+  .mock-preset .name { font-size: 9px; color: var(--text-secondary); margin-top: 3px; }
+  .mock-preset .pct { font-size: 9px; color: var(--text-secondary); }
+
+  h2.section-title {
+    font-size: 26px;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    margin: 8px 0 8px;
+  }
+  .section-lede { color: var(--text-secondary); font-size: 15px; margin: 0 0 32px; max-width: 620px; }
+
+  .audience-grid, .feature-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-bottom: 64px;
+  }
+  @media (max-width: 760px) {
+    .audience-grid, .feature-grid { grid-template-columns: 1fr; }
   }
   .card {
     background: var(--surface);
     border: 1px solid var(--border);
     border-radius: 12px;
-    padding: 24px 28px;
-    margin-bottom: 20px;
+    padding: 22px 24px;
   }
-  .card h2 {
-    font-size: 18px;
-    font-weight: 600;
-    margin: 0 0 10px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
-  .card p, .card li {
-    color: #E5E7EB;
-    font-size: 15px;
-    margin: 0 0 8px;
-  }
-  .card ul {
-    margin: 8px 0 0;
-    padding-left: 20px;
-  }
-  .icon-dot {
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
+  .card .icon-dot {
+    width: 8px; height: 8px; border-radius: 50%;
     background: var(--accent);
-    flex-shrink: 0;
+    display: inline-block;
+    margin-right: 8px;
   }
-  .highlight {
+  .card h3 { font-size: 16px; font-weight: 600; margin: 0 0 8px; display: flex; align-items: center; }
+  .card p { color: #E5E7EB; font-size: 14px; margin: 0; }
+  .card .tag {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--gold-mid);
+    background: rgba(245,183,64,0.12);
+    border: 1px solid rgba(245,183,64,0.3);
+    border-radius: 999px;
+    padding: 2px 8px;
+    margin-bottom: 10px;
+  }
+  .card .tag.free {
     color: var(--accent);
-    font-weight: 600;
+    background: rgba(59,130,246,0.12);
+    border-color: rgba(59,130,246,0.3);
   }
+
+  .perf-strip {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 28px;
+    margin-bottom: 64px;
+    text-align: center;
+  }
+  @media (max-width: 760px) {
+    .perf-strip { grid-template-columns: 1fr; }
+  }
+  .perf-strip .stat { font-size: 22px; font-weight: 700; color: var(--text); }
+  .perf-strip .label { font-size: 13px; color: var(--text-secondary); margin-top: 4px; }
+
+  .pricing-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 36px;
+    text-align: center;
+    margin-bottom: 48px;
+  }
+  .pricing-card .price { font-size: 40px; font-weight: 700; margin: 12px 0 4px; }
+  .pricing-card .price span { font-size: 16px; color: var(--text-secondary); font-weight: 500; }
+  .pricing-card .sub { color: var(--text-secondary); font-size: 14px; margin-bottom: 20px; }
+
   footer {
-    margin-top: 48px;
+    margin-top: 32px;
     padding-top: 24px;
     border-top: 1px solid var(--border);
     color: var(--text-secondary);
     font-size: 13px;
     text-align: center;
   }
-  a { color: var(--accent); text-decoration: none; }
-  a:hover { text-decoration: underline; }
+  footer a { margin: 0 8px; }
 </style>
 </head>
 <body>
+
+<nav class="top">
+  <a class="brand" href="index.html"><img src="icon.png" alt=""> DimmerPro</a>
+  <span class="links"><a href="support.html">Support</a><a href="privacy.html">Privacy</a></span>
+</nav>
+
 <div class="wrap">
-  <span class="badge">🔒 Zero Data Collection</span>
-  <h1>DimmerPro Privacy Policy</h1>
-  <div class="updated">Last updated: September 26, 2026</div>
 
-  <div class="card">
-    <h2><span class="icon-dot"></span>Summary</h2>
-    <p>DimmerPro is a simple macOS menu bar app that dims your screen's brightness in software.
-    The app itself <span class="highlight">does not collect, store, or share any personal data
-    with third parties</span>. All dimming, preset, and scheduler functionality happens entirely
-    on your device. The in-app purchase feature is processed through Apple's own App Store
-    infrastructure (StoreKit) — that flow is explained separately below.</p>
+  <div class="hero">
+    <div>
+      <span class="badge">🌙 Ease Your Eye Strain</span>
+      <h1>Dim your screen below hardware limits.</h1>
+      <p class="lede">DimmerPro is a native macOS menu bar app for developers and designers who
+      work late, traders running multi-monitor setups, and anyone sensitive to bright light.
+      When your display's lowest brightness still feels too bright, DimmerPro dims further —
+      entirely in software.</p>
+      <div class="cta-row">
+        <span class="cta-primary" style="opacity:0.5; cursor:default;">Coming soon to the Mac App Store</span>
+      </div>
+      <p class="cta-note" style="margin-top:14px;">Core dimming is free, forever. No account, no ads, no tracking.</p>
+    </div>
+    <div class="mock-panel" aria-hidden="true">
+      <div class="mock-header">
+        <img src="icon.png" alt="">
+        <span class="title">DimmerPro</span>
+        <span class="spacer"></span>
+        <span class="mock-pro-badge"><span class="gold"></span>Unlock Pro ›</span>
+      </div>
+      <div class="mock-card">
+        <div class="mock-toggle-row">
+          <span class="label">Sync Displays</span>
+          <span class="mock-switch"></span>
+        </div>
+      </div>
+      <div class="mock-card">
+        <div class="mock-slider-label"><span>Overall Brightness</span><span>32%</span></div>
+        <div class="mock-track">
+          <div class="mock-fill"></div>
+          <div class="mock-thumb"></div>
+        </div>
+      </div>
+      <div class="mock-presets">
+        <div class="mock-preset"><div class="emoji">☀️</div><div class="name">Day</div><div class="pct">100%</div></div>
+        <div class="mock-preset active"><div class="emoji">🌙</div><div class="name">Night</div><div class="pct">32%</div></div>
+        <div class="mock-preset"><div class="emoji">🎬</div><div class="name">Movie</div><div class="pct">15%</div></div>
+      </div>
+    </div>
   </div>
 
-  <div class="card">
-    <h2><span class="icon-dot"></span>Data We Collect</h2>
-    <p>DimmerPro does not collect any analytics, tracking data, advertising identifiers, or usage
-    statistics on its own. The app has no account creation, sign-in, or personal information
-    entry of any kind.</p>
+  <h2 class="section-title">Built for people who stare at screens all day</h2>
+  <p class="section-lede">Not a generic brightness slider — DimmerPro is shaped around three specific ways people actually use it.</p>
+  <div class="audience-grid">
+    <div class="card">
+      <h3><span class="icon-dot"></span>Night owls</h3>
+      <p>Developers and designers coding or designing late — dim well past your display's hardware floor without straining your eyes.</p>
+    </div>
+    <div class="card">
+      <h3><span class="icon-dot"></span>Multi-monitor traders</h3>
+      <p>Traders and analysts running several displays keep every screen synced to the same comfortable brightness, or tuned independently.</p>
+    </div>
+    <div class="card">
+      <h3><span class="icon-dot"></span>Light-sensitive users</h3>
+      <p>If bright screens trigger eye strain or headaches, DimmerPro's sub-zero dimming gives you a lower floor than macOS allows on its own.</p>
+    </div>
   </div>
 
-  <div class="card">
-    <h2><span class="icon-dot"></span>Local Storage</h2>
-    <p>Your dimming levels, presets, scheduler settings, and hotkey preferences are stored
-    <span class="highlight">only on your device, using Apple's standard <code>UserDefaults</code>
-    mechanism</span>. This data is never sent off your device.</p>
+  <h2 class="section-title">Everything you need, nothing you don't</h2>
+  <p class="section-lede">Core dimming is free forever. A handful of power-user features are part of DimmerPro Pro.</p>
+  <div class="feature-grid">
+    <div class="card">
+      <span class="tag free">FREE FOREVER</span>
+      <h3>Sub-Zero Dimming</h3>
+      <p>Dim past your hardware's own brightness floor, from a one-click menu bar slider.</p>
+    </div>
+    <div class="card">
+      <span class="tag">PRO</span>
+      <h3>Multi-Display Sync</h3>
+      <p>Darken every display independently, or keep them all in sync with one control.</p>
+    </div>
+    <div class="card">
+      <span class="tag">PRO</span>
+      <h3>Auto Scheduler</h3>
+      <p>Set a time range and let DimmerPro switch modes automatically — no manual toggling.</p>
+    </div>
+    <div class="card">
+      <span class="tag">PRO</span>
+      <h3>Up to 4 Presets</h3>
+      <p>Save your favorite brightness levels with an emoji and a name, and switch in one click.</p>
+    </div>
+    <div class="card">
+      <span class="tag">PRO</span>
+      <h3>Global Hotkey</h3>
+      <p>Adjust brightness instantly from any app, without opening the menu bar panel.</p>
+    </div>
+    <div class="card">
+      <span class="tag free">DIFFERENTIATOR</span>
+      <h3>Built with SwiftUI</h3>
+      <p>Native from the ground up — runs at close to 0% CPU in the background, unlike heavier, cross-platform dimmer apps.</p>
+    </div>
   </div>
 
-  <div class="card">
-    <h2><span class="icon-dot"></span>In-App Purchase (Pro Version)</h2>
-    <p>DimmerPro's core dimming features are always free. Pro features such as multi-display sync,
-    the scheduler, up to 4 presets, and the global hotkey are unlocked with a single one-time
-    in-app purchase. This purchase is processed <span class="highlight">entirely through Apple's
-    own App Store/StoreKit infrastructure</span>: your payment details go directly to Apple, never
-    to DimmerPro — DimmerPro never sees or stores your card or payment information. Your purchase
-    status (e.g. whether the Pro unlock is active) is read from Apple's secure StoreKit ledger.
-    During this process your device communicates with Apple's servers — this is not a network
-    connection DimmerPro initiates itself, but part of the App Store's purchasing infrastructure.</p>
+  <div class="perf-strip">
+    <div>
+      <div class="stat">~0% CPU</div>
+      <div class="label">Idle background usage</div>
+    </div>
+    <div>
+      <div class="stat">Zero data</div>
+      <div class="label">Collected or shared</div>
+    </div>
+    <div>
+      <div class="stat">Sandboxed</div>
+      <div class="label">Fully Mac App Store compliant</div>
+    </div>
   </div>
 
-  <div class="card">
-    <h2><span class="icon-dot"></span>Network Access</h2>
-    <p>DimmerPro itself does not connect to any server, perform cloud sync, or include any
-    third-party analytics/advertising SDK. Other than the in-app purchase flow described above,
-    the app does not connect to the internet.</p>
-  </div>
-
-  <div class="card">
-    <h2><span class="icon-dot"></span>Permissions (Sandbox)</h2>
-    <p>The app runs inside Apple's App Sandbox and only requests the minimum permissions it needs
-    to function:</p>
-    <ul>
-      <li>Creating system-wide translucent window layers to dim screen brightness</li>
-      <li>(If applicable) read-only access to files the user explicitly selects</li>
-    </ul>
-    <p>Beyond these, the app does not request access to location, camera, microphone, contacts,
-    photos, or any other sensitive data category.</p>
-  </div>
-
-  <div class="card">
-    <h2><span class="icon-dot"></span>Children's Privacy</h2>
-    <p>DimmerPro does not knowingly collect any data from children, because it does not collect
-    data from any user.</p>
-  </div>
-
-  <div class="card">
-    <h2><span class="icon-dot"></span>Changes to This Policy</h2>
-    <p>If this policy is updated, the changes will be published on this page and the "last
-    updated" date above will be revised.</p>
-  </div>
-
-  <div class="card">
-    <h2><span class="icon-dot"></span>Contact</h2>
-    <p>Questions: <a href="mailto:support@sparkup.studio">support@sparkup.studio</a></p>
+  <h2 class="section-title" style="text-align:center;">Simple pricing</h2>
+  <div class="pricing-card">
+    <div class="badge">3-Day Free Pro Trial</div>
+    <div class="price">$1.99 <span>one time</span></div>
+    <div class="sub">Pay once, own DimmerPro Pro forever. No subscription, ever.</div>
+    <p style="color:#E5E7EB; font-size:14px; max-width:480px; margin:0 auto;">
+      Unlocks multi-display sync, the scheduler, up to 4 presets, and the global hotkey.
+      Core dimming stays free forever, with or without Pro.
+    </p>
   </div>
 
   <footer>
-    © 2026 DimmerPro. All rights reserved.
+    <div><a href="support.html">Support</a>·<a href="privacy.html">Privacy Policy</a></div>
+    <div style="margin-top:8px">© 2026 DimmerPro. All rights reserved.</div>
   </footer>
 </div>
 </body>

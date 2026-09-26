@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/png" href="favicon.png">
+<title>DimmerPro — Privacy Policy</title>
+<style>
+  :root {
+    --accent: #3B82F6;
+    --bg: #0D0E12;
+    --surface: rgba(255,255,255,0.05);
+    --border: rgba(255,255,255,0.08);
+    --text: #FFFFFF;
+    --text-secondary: #9CA3AF;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    padding: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
+    line-height: 1.6;
+  }
+  .wrap {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 64px 24px 96px;
+  }
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(59,130,246,0.15);
+    color: var(--accent);
+    border: 1px solid rgba(59,130,246,0.3);
+    border-radius: 999px;
+    padding: 6px 14px;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+  }
+  h1 {
+    font-size: 34px;
+    font-weight: 700;
+    margin: 20px 0 8px;
+    letter-spacing: -0.02em;
+  }
+  .updated {
+    color: var(--text-secondary);
+    font-size: 14px;
+    margin-bottom: 40px;
+  }
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 24px 28px;
+    margin-bottom: 20px;
+  }
+  .card h2 {
+    font-size: 18px;
+    font-weight: 600;
+    margin: 0 0 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .card p, .card li {
+    color: #E5E7EB;
+    font-size: 15px;
+    margin: 0 0 8px;
+  }
+  .card ul {
+    margin: 8px 0 0;
+    padding-left: 20px;
+  }
+  .icon-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--accent);
+    flex-shrink: 0;
+  }
+  .highlight {
+    color: var(--accent);
+    font-weight: 600;
+  }
+  footer {
+    margin-top: 48px;
+    padding-top: 24px;
+    border-top: 1px solid var(--border);
+    color: var(--text-secondary);
+    font-size: 13px;
+    text-align: center;
+  }
+  footer a { margin: 0 8px; }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  nav.top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 24px 0 0;
+  }
+  nav.top .brand {
+    font-weight: 700;
+    font-size: 16px;
+    color: var(--text);
+  }
+  nav.top .links a {
+    color: var(--text-secondary);
+    font-size: 14px;
+    margin-left: 20px;
+  }
+  nav.top .links a:hover { color: var(--text); }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <nav class="top">
+    <a class="brand" href="index.html" style="display:flex;align-items:center;gap:8px;"><img src="icon.png" alt="" style="width:22px;height:22px;border-radius:6px;"> DimmerPro</a>
+    <span class="links"><a href="index.html">Home</a><a href="support.html">Support</a></span>
+  </nav>
+  <span class="badge" style="margin-top:32px">🔒 Zero Data Collection</span>
+  <h1>DimmerPro Privacy Policy</h1>
+  <div class="updated">Last updated: September 26, 2026</div>
+
+  <div class="card">
+    <h2><span class="icon-dot"></span>Summary</h2>
+    <p>DimmerPro is a simple macOS menu bar app that dims your screen's brightness in software.
+    The app itself <span class="highlight">does not collect, store, or share any personal data
+    with third parties</span>. All dimming, preset, and scheduler functionality happens entirely
+    on your device. The in-app purchase feature is processed through Apple's own App Store
+    infrastructure (StoreKit) — that flow is explained separately below.</p>
+  </div>
+
+  <div class="card">
+    <h2><span class="icon-dot"></span>Data We Collect</h2>
+    <p>DimmerPro does not collect any analytics, tracking data, advertising identifiers, or usage
+    statistics on its own. The app has no account creation, sign-in, or personal information
+    entry of any kind.</p>
+  </div>
+
+  <div class="card">
+    <h2><span class="icon-dot"></span>Local Storage</h2>
+    <p>Your dimming levels, presets, scheduler settings, and hotkey preferences are stored
+    <span class="highlight">only on your device, using Apple's standard <code>UserDefaults</code>
+    mechanism</span>. This data is never sent off your device.</p>
+  </div>
+
+  <div class="card">
+    <h2><span class="icon-dot"></span>In-App Purchase (Pro Version)</h2>
+    <p>DimmerPro's core dimming features are always free. Pro features such as multi-display sync,
+    the scheduler, up to 4 presets, and the global hotkey are unlocked with a single one-time
+    in-app purchase. This purchase is processed <span class="highlight">entirely through Apple's
+    own App Store/StoreKit infrastructure</span>: your payment details go directly to Apple, never
+    to DimmerPro — DimmerPro never sees or stores your card or payment information. Your purchase
+    status (e.g. whether the Pro unlock is active) is read from Apple's secure StoreKit ledger.
+    During this process your device communicates with Apple's servers — this is not a network
+    connection DimmerPro initiates itself, but part of the App Store's purchasing infrastructure.</p>
+  </div>
+
+  <div class="card">
+    <h2><span class="icon-dot"></span>Network Access</h2>
+    <p>DimmerPro itself does not connect to any server, perform cloud sync, or include any
+    third-party analytics/advertising SDK. Other than the in-app purchase flow described above,
+    the app does not connect to the internet.</p>
+  </div>
+
+  <div class="card">
+    <h2><span class="icon-dot"></span>Permissions (Sandbox)</h2>
+    <p>The app runs inside Apple's App Sandbox and only requests the minimum permissions it needs
+    to function:</p>
+    <ul>
+      <li>Creating system-wide translucent window layers to dim screen brightness</li>
+    </ul>
+    <p>Beyond these, the app does not request access to location, camera, microphone, contacts,
+    photos, or any other sensitive data category.</p>
+  </div>
+
+  <div class="card">
+    <h2><span class="icon-dot"></span>Children's Privacy</h2>
+    <p>DimmerPro does not knowingly collect any data from children, because it does not collect
+    data from any user.</p>
+  </div>
+
+  <div class="card">
+    <h2><span class="icon-dot"></span>Changes to This Policy</h2>
+    <p>If this policy is updated, the changes will be published on this page and the "last
+    updated" date above will be revised.</p>
+  </div>
+
+  <div class="card">
+    <h2><span class="icon-dot"></span>Contact</h2>
+    <p>Questions: <a href="mailto:support@sparkup.studio">support@sparkup.studio</a></p>
+  </div>
+
+  <footer>
+    <div><a href="index.html">Home</a>·<a href="support.html">Support</a></div>
+    <div style="margin-top:8px">© 2026 DimmerPro. All rights reserved.</div>
+  </footer>
+</div>
+</body>
+</html>
