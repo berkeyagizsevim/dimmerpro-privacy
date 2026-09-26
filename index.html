@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DimmerPro — Gizlilik Politikası</title>
+<style>
+  :root {
+    --accent: #3B82F6;
+    --bg: #0D0E12;
+    --surface: rgba(255,255,255,0.05);
+    --border: rgba(255,255,255,0.08);
+    --text: #FFFFFF;
+    --text-secondary: #9CA3AF;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    padding: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
+    line-height: 1.6;
+  }
+  .wrap {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 64px 24px 96px;
+  }
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(59,130,246,0.15);
+    color: var(--accent);
+    border: 1px solid rgba(59,130,246,0.3);
+    border-radius: 999px;
+    padding: 6px 14px;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+  }
+  h1 {
+    font-size: 34px;
+    font-weight: 700;
+    margin: 20px 0 8px;
+    letter-spacing: -0.02em;
+  }
+  .updated {
+    color: var(--text-secondary);
+    font-size: 14px;
+    margin-bottom: 40px;
+  }
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 24px 28px;
+    margin-bottom: 20px;
+  }
+  .card h2 {
+    font-size: 18px;
+    font-weight: 600;
+    margin: 0 0 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .card p, .card li {
+    color: #E5E7EB;
+    font-size: 15px;
+    margin: 0 0 8px;
+  }
+  .card ul {
+    margin: 8px 0 0;
+    padding-left: 20px;
+  }
+  .icon-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--accent);
+    flex-shrink: 0;
+  }
+  .highlight {
+    color: var(--accent);
+    font-weight: 600;
+  }
+  footer {
+    margin-top: 48px;
+    padding-top: 24px;
+    border-top: 1px solid var(--border);
+    color: var(--text-secondary);
+    font-size: 13px;
+    text-align: center;
+  }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <span class="badge">🔒 Zero Data Collection</span>
+  <h1>DimmerPro Gizlilik Politikası</h1>
+  <div class="updated">Son güncelleme: 26 Eylül 2026</div>
+
+  <div class="card">
+    <h2><span class="icon-dot"></span>Özet</h2>
+    <p>DimmerPro, ekranınızın parlaklığını yazılımsal olarak azaltan basit bir macOS menü çubuğu
+    uygulamasıdır. Uygulama <span class="highlight">kendisi hiçbir kişisel veri toplamaz, saklamaz
+    veya üçüncü taraflarla paylaşmaz</span>. Tüm karartma/ön ayar/zamanlayıcı işlevleri tamamen
+    cihazınızın içinde gerçekleşir. Uygulama içi satın alma özelliği, Apple'ın kendi App Store
+    altyapısı (StoreKit) üzerinden işler — bu akış aşağıda ayrıca açıklanmıştır.</p>
+  </div>
+
+  <div class="card">
+    <h2><span class="icon-dot"></span>Toplanan Veri</h2>
+    <p>DimmerPro kendi tarafında herhangi bir analitik, izleme (tracking), reklam kimliği veya
+    kullanım istatistiği toplamaz. Uygulama içinde hesap oluşturma, giriş yapma veya kişisel bilgi
+    girme gibi bir işlev bulunmaz.</p>
+  </div>
+
+  <div class="card">
+    <h2><span class="icon-dot"></span>Yerel Depolama</h2>
+    <p>Karartma seviyeleri, ön ayarlarınız (presets), zamanlayıcı ayarları ve kısayol tercihleri
+    yalnızca <span class="highlight">Apple'ın standart <code>UserDefaults</code> mekanizması ile
+    cihazınızda yerel olarak</span> saklanır. Bu veriler cihazınızın dışına asla gönderilmez.</p>
+  </div>
+
+  <div class="card">
+    <h2><span class="icon-dot"></span>Uygulama İçi Satın Alma (Pro Sürüm)</h2>
+    <p>DimmerPro'nun temel karartma özellikleri her zaman ücretsizdir. Çoklu ekran senkronizasyonu,
+    zamanlayıcı, sınırsız ön ayar ve global kısayol gibi Pro özellikler, tek seferlik bir
+    uygulama içi satın alma ile açılır. Bu satın alma işlemi <span class="highlight">Apple'ın
+    kendi App Store/StoreKit altyapısı üzerinden</span> gerçekleştirilir; ödeme bilgileriniz
+    DimmerPro'ya değil doğrudan Apple'a iletilir, DimmerPro kredi kartı veya ödeme bilgisi
+    görmez ya da saklamaz. Satın alma durumunuz (ör. Pro kilidinin açık olup olmadığı), Apple'ın
+    güvenli StoreKit defterinden okunur. Bu işlem sırasında cihazınız Apple'ın sunucularıyla
+    iletişime geçer — bu, DimmerPro'nun kendi başlattığı bir ağ bağlantısı değil, App Store'un
+    satın alma altyapısının bir parçasıdır.</p>
+  </div>
+
+  <div class="card">
+    <h2><span class="icon-dot"></span>Ağ Erişimi</h2>
+    <p>DimmerPro'nun kendisi herhangi bir sunucuya bağlanmaz, bulut senkronizasyonu yapmaz veya
+    üçüncü taraf analitik/reklam SDK'sı içermez. Yukarıda açıklanan uygulama içi satın alma akışı
+    dışında uygulama internete bağlanmaz.</p>
+  </div>
+
+  <div class="card">
+    <h2><span class="icon-dot"></span>İzinler (Sandbox)</h2>
+    <p>Uygulama, Apple App Sandbox içinde çalışır ve yalnızca işlevi için gerekli minimum
+    izinleri talep eder:</p>
+    <ul>
+      <li>Ekran parlaklığını karartmak için sistem genelinde yarı saydam pencere katmanları
+      oluşturma</li>
+      <li>(Varsa) kullanıcının açıkça seçtiği dosyalara salt-okunur erişim</li>
+    </ul>
+    <p>Bu izinler dışında konum, kamera, mikrofon, kişiler, fotoğraflar veya başka herhangi bir
+    hassas veri kategorisine erişim talep edilmez.</p>
+  </div>
+
+  <div class="card">
+    <h2><span class="icon-dot"></span>Çocukların Gizliliği</h2>
+    <p>DimmerPro çocuklardan bilerek herhangi bir veri toplamaz, çünkü hiçbir kullanıcıdan veri
+    toplamaz.</p>
+  </div>
+
+  <div class="card">
+    <h2><span class="icon-dot"></span>Politika Değişiklikleri</h2>
+    <p>Bu politika güncellenirse, değişiklikler bu sayfada yayımlanacak ve üst kısımdaki
+    "son güncelleme" tarihi yenilenecektir.</p>
+  </div>
+
+  <div class="card">
+    <h2><span class="icon-dot"></span>İletişim</h2>
+    <p>Sorularınız için: <a href="mailto:berkeyagiz@sparkup.studio">berkeyagiz@sparkup.studio</a></p>
+  </div>
+
+  <footer>
+    © 2026 DimmerPro. Tüm hakları saklıdır.
+  </footer>
+</div>
+</body>
+</html>
